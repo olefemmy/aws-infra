@@ -34,8 +34,7 @@ resource "aws_kms_key" "deployment_master_kms_key" {
       "Sid": "Allow use of the key",
       "Effect": "Allow",
       "Principal": {"AWS": [
-        "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/switch-role-admin",
-        "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/switch-role-read-only"
+        "*"
       ]},
       "Action": [
         "kms:Encrypt",
