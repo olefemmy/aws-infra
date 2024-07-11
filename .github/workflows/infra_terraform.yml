@@ -55,13 +55,13 @@ jobs:
         env:
           TF_VAR_aws_access_key_id: "${{ secrets.TF_VAR_AWS_ACCESS_KEY_ID }}"
           TF_VAR_aws_secret_access_key: "${{ secrets.TF_VAR_AWS_SECRET_ACCESS_KEY }}"
-        run: "terraform  plan --out tf_plan.txt"
+        run: "terraform  plan --out infra_tf_plan.txt"
         continue-on-error: true
 
       - uses: actions/upload-artifact@main
         with:
-          name: tf plan outputs
-          path: tf_plan.txt
+          name: infra tf plan outputs
+          path: infra_tf_plan.txt
           retention-days: 1
 
       - name: "Terraform Apply"
