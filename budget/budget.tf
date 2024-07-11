@@ -22,27 +22,11 @@ module "aws_budgets" {
       }
     },
 
-    extra-notifications = {
-      budget_type  = "COST"
-      limit_amount = 1
-      time_unit    = "DAILY"
-
-      daily_notifications = {
-        extra = {
-          comparison_operator        = "GREATER_THAN"
-          notification_type          = "ACTUAL"
-          subscriber_email_addresses = ["olefemmy@yahoo.com", "apatafolasade@yahoo.com"]
-          threshold                  = 10
-          threshold_type             = "PERCENTAGE"
-        },
-      }
-    },
-
     default-monthly-notifications = {
       budget_type           = "COST"
       limit_amount          = 10
       time_unit             = "MONTHLY"
-      extra_email_addresses = ["olefemmy@yahoo.com", "apatafolasade@yahoo.com"]
+      extra_email_addresses = []
 
     },
 
@@ -52,7 +36,7 @@ module "aws_budgets" {
   }
 
   default_notifications = {
-    default-forcast-100 = {
+    default-forecast-100 = {
       comparison_operator : "GREATER_THAN"
       threshold : 20
       threshold_type : "PERCENTAGE"
