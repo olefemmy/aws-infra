@@ -1,5 +1,5 @@
 module "vpc" {
-  source                  = "../module/aws-vpc"
+  source                  = "git::https://git@github.com/olefemmy/aws-vpc.git?ref=main"
   environment             = var.environment
   service_name            = var.service_name
   vpc_cidr_block          = var.vpc_cidr_block
