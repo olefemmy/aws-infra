@@ -1,5 +1,5 @@
 module "vpc" {
-  source                  = "../module/aws-vpc/"
+  source                  = "../module/aws-vpc"
   environment             = var.environment
   service_name            = var.service_name
   vpc_cidr_block          = var.vpc_cidr_block
@@ -11,4 +11,3 @@ module "vpc" {
     Service = "infrastructure"
   }
 }
-

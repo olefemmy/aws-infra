@@ -25,4 +25,3 @@ resource "aws_route53_record" "directory_service_dns_records" {
   ttl     = "300"
   records = local.route53_records
 }
-
